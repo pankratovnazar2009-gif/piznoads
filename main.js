@@ -447,7 +447,7 @@ const hio = new IntersectionObserver(entries => entries.forEach(en => {
 $$("[data-hud]").forEach(s => hio.observe(s));
 
 // nav and HUD switch to light text over dark / red sections
-const isDark = el => el.classList.contains("dark") || el.classList.contains("red");
+const isDark = el => ["dark", "navy", "blue"].some(c => el.classList.contains(c));
 const nav = $(".nav"), hud = $(".hud");
 const themed = $$("main > section, .marquee");
 const watchEdge = (target, margin) => new IntersectionObserver(entries => entries.forEach(en => {
