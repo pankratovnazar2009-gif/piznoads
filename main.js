@@ -237,5 +237,15 @@ form.addEventListener("submit", async e => {
   }
 });
 
+/* ---------- mobile sticky CTA: after the hero, hidden over the final CTA ---------- */
+const mbar = $("#mbar");
+let ctaVisible = false;
+new IntersectionObserver(([en]) => { ctaVisible = en.isIntersecting; updateBar(); }, { threshold: 0.1 }).observe($(".cta"));
+function updateBar() {
+  const pastHero = scrollY > $(".hero").offsetHeight * 0.7;
+  mbar.classList.toggle("show", pastHero && !ctaVisible);
+}
+addEventListener("scroll", updateBar, { passive: true });
+
 /* ---------- start ---------- */
 runLoader().then(leaveLoader);
