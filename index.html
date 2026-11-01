@@ -3,15 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Портфоліо pizno</title>
-<meta name="description" content="pizno — реклама для локального бізнесу: ролики для Reels і TikTok, реклама в Meta, NFC-відгуки, сайти й боти.">
-<meta name="theme-color" content="#10131A">
+<title>Pizno агенція</title>
+<meta name="description" content="Pizno агенція — реклама в Meta і ведення Instagram для персональних тренерів в Україні.">
+<meta name="theme-color" content="#0D0E11">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Rubik:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Rubik:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script>
-  // анімації вмикаються ще до першого кадру — без «стрибка» контенту
   if (!matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("anim");
   try { if (sessionStorage.getItem("pizno-seen")) document.documentElement.classList.add("seen"); } catch (e) {}
 </script>
@@ -20,10 +19,7 @@
 
 <!-- ============ loader ============ -->
 <div class="loader" id="loader" aria-hidden="true">
-  <div class="loader-row mono">
-    <span>pizno® / ad studio</span>
-    <span data-t="loaderLabel"></span>
-  </div>
+  <div class="loader-row mono"><span>Pizno агенція</span><span>Завантаження</span></div>
   <div class="loader-word">
     <span class="loader-outline">PIZNO</span>
     <span class="loader-fill" id="loaderFill">PIZNO</span>
@@ -35,312 +31,245 @@
 </div>
 
 <div class="progress" id="progress" aria-hidden="true"></div>
-<div class="cursor" id="cursor" aria-hidden="true"><span id="cursorLabel"></span></div>
 
 <!-- ============ nav ============ -->
 <header class="nav">
-  <a href="#top" class="logo">pizno<sup>®</sup></a>
-  <nav class="nav-links mono" aria-label="Menu">
-    <a href="#work" data-t="navWork"></a>
-    <a href="#services" data-t="navServices"></a>
-    <a href="#process" data-t="navProcess"></a>
-    <a href="#contact" data-t="navContact"></a>
+  <a href="#top" class="logo"><span class="logo-mark">P</span>Pizno <small>агенція</small></a>
+  <nav class="nav-links mono" aria-label="Меню">
+    <a href="#what">Що робимо</a>
+    <a href="#how">Як працюємо</a>
+    <a href="#formats">Формати</a>
+    <a href="#faq">Питання</a>
   </nav>
-  <div class="nav-right mono">
-    <div class="lang" role="group" aria-label="Language">
-      <button type="button" data-lang="uk">UA</button><span>/</span><button type="button" data-lang="en">EN</button>
-    </div>
-    <a class="nav-cta" href="https://t.me/Pa9krat" target="_blank" rel="noopener" data-t="navCta"></a>
-  </div>
+  <a class="nav-cta" href="https://t.me/Pa9krat" target="_blank" rel="noopener">Безкоштовний розбір</a>
 </header>
-
-<div class="hud mono" aria-hidden="true"><span id="hudNum">00</span><i></i><span id="hudName">Intro</span></div>
 
 <main id="top">
 
-  <!-- ============ hero ============ -->
-  <section class="hero" data-hud="00|hudIntro">
-    <div class="hero-meta mono">
-      <span>Vol. 01 — 2026</span>
-      <span data-t="heroKicker"></span>
-      <span>Reels / Meta / NFC</span>
+  <!-- ============ 1. hero ============ -->
+  <section class="hero">
+    <div class="rails" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="hero-bg display" aria-hidden="true">PIZNO</div>
+
+    <div class="hero-copy">
+      <p class="sticker">Реклама в Meta для персональних тренерів</p>
+      <h1 class="display split">Заповнимо твій розклад клієнтами з <span class="hl">Instagram</span></h1>
+      <p class="hero-sub reveal">Налаштовуємо рекламу і ведемо твою сторінку так, щоб люди писали в директ і записувалися на пробне тренування. Ти тренуєш — ми приводимо клієнтів.</p>
+      <div class="hero-ctas reveal">
+        <a class="btn btn-accent magnetic" href="https://t.me/Pa9krat" target="_blank" rel="noopener">Безкоштовний розбір твого Instagram <b>→</b></a>
+        <a class="btn btn-ghost" href="#what">Як це працює</a>
+      </div>
+      <p class="sports mono reveal">Футбол · баскетбол · зал · HYROX · бокс · функціональний тренінг</p>
     </div>
-    <h1 class="hero-title display" id="heroTitle" data-t="heroTitle"></h1>
-    <div class="hero-phones">
-      <figure class="phone p1" data-cursor="sound">
-        <video data-src="media/c-v12.mp4" poster="media/s-v12.jpg" muted loop playsinline preload="auto" data-hero></video>
-      </figure>
-      <figure class="phone p2" data-cursor="sound">
-        <video data-src="media/c-v9.mp4" poster="media/s-v9a.jpg" muted loop playsinline preload="auto" data-hero></video>
-      </figure>
-      <figure class="phone p3" data-cursor="sound">
-        <video data-src="media/c-v14.mp4" poster="media/s-v14.jpg" muted loop playsinline preload="auto" data-hero></video>
-      </figure>
-    </div>
-    <div class="hero-bottom">
-      <p class="hero-sub split" data-t="heroSub"></p>
-      <dl class="hero-stats">
-        <div><dt class="display"><span data-count="15">15</span>+</dt><dd class="mono" data-t="stat1"></dd></div>
-        <div><dt class="display"><span data-count="6">6</span></dt><dd class="mono" data-t="stat2"></dd></div>
-        <div><dt class="display">0–3<small data-t="sec"></small></dt><dd class="mono" data-t="stat3"></dd></div>
-      </dl>
+
+    <div class="hero-visual" aria-label="Приклад: реклама тренера в Instagram і заявки в директ">
+      <div class="phone">
+        <div class="ig-top">
+          <span class="ig-ava">T</span>
+          <div><b>твій_профіль</b><small>Реклама</small></div>
+          <span class="ig-dots">•••</span>
+        </div>
+        <div class="ig-media">
+          <span class="ig-kicker mono">Персональні тренування</span>
+          <span class="ig-big display">Пробне<br>тренування</span>
+          <span class="ig-price display">0 ₴</span>
+          <svg class="ig-bar" viewBox="0 0 200 40" aria-hidden="true"><rect x="10" y="4" width="16" height="32" rx="3" fill="#0D0E11"/><rect x="30" y="9" width="10" height="22" rx="2" fill="#0D0E11"/><rect x="40" y="17" width="120" height="6" rx="3" fill="#0D0E11"/><rect x="160" y="9" width="10" height="22" rx="2" fill="#0D0E11"/><rect x="174" y="4" width="16" height="32" rx="3" fill="#0D0E11"/></svg>
+        </div>
+        <div class="ig-cta"><span>Надіслати повідомлення</span><b>›</b></div>
+        <p class="ig-caption"><b>твій_профіль</b> Футбол для дітей 7–12 років і дорослих. Перше тренування — безкоштовно. Пиши «ХОЧУ» в директ.</p>
+      </div>
+      <div class="dms">
+        <div class="dm"><span class="dm-ava">А</span><div><b>Нове повідомлення · 21:14</b><p>Привіт! Можна на пробне в суботу?</p></div></div>
+        <div class="dm"><span class="dm-ava">М</span><div><b>Нове повідомлення · 21:32</b><p>Скільки коштує місяць персональних?</p></div></div>
+        <div class="dm"><span class="dm-ava">О</span><div><b>Нове повідомлення · 22:05</b><p>Є вільний час після 19:00?</p></div></div>
+      </div>
+      <p class="example mono">Приклад інтерфейсу</p>
+      <a class="badge" href="https://t.me/Pa9krat" target="_blank" rel="noopener" aria-label="Безкоштовний розбір у Telegram">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <defs><path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+          <text><textPath href="#circ" textLength="284" lengthAdjust="spacingAndGlyphs">БЕЗКОШТОВНИЙ РОЗБІР · БЕЗКОШТОВНИЙ РОЗБІР ·</textPath></text>
+        </svg>
+        <b>→</b>
+      </a>
     </div>
   </section>
 
-  <!-- ============ marquee ============ -->
-  <div class="marquee blue" aria-hidden="true">
+  <!-- marquee -->
+  <div class="marquee" aria-hidden="true">
     <div class="marquee-track" id="marquee">
-      <span>Reels</span><b>●</b><span>TikTok</span><b>●</b><span>Meta Ads</span><b>●</b><span>NFC</span><b>●</b><span data-t="mqSites"></span><b>●</b><span data-t="mqBots"></span><b>●</b>
-      <span>Reels</span><b>●</b><span>TikTok</span><b>●</b><span>Meta Ads</span><b>●</b><span>NFC</span><b>●</b><span data-t="mqSites"></span><b>●</b><span data-t="mqBots"></span><b>●</b>
+      <span>Футбол</span><b>✕</b><span>Баскетбол</span><b>✕</b><span>Зал</span><b>✕</b><span>HYROX</span><b>✕</b><span>Бокс</span><b>✕</b><span>Функціонал</span><b>✕</b><span>Біг</span><b>✕</b>
+      <span>Футбол</span><b>✕</b><span>Баскетбол</span><b>✕</b><span>Зал</span><b>✕</b><span>HYROX</span><b>✕</b><span>Бокс</span><b>✕</b><span>Функціонал</span><b>✕</b><span>Біг</span><b>✕</b>
     </div>
   </div>
 
-  <!-- ============ 01 principle ============ -->
-  <section class="principle sec dark" id="principle" data-hud="01|hudPrinciple">
-    <p class="label mono reveal" data-t="prLabel"></p>
-    <h2 class="statement display split-fade" data-t="prStatement"></h2>
-    <div class="steps3">
-      <article class="reveal">
-        <p class="mono accent" data-t="pr1k"></p>
-        <h3 class="display" data-t="pr1h"></h3>
-        <p data-t="pr1p"></p>
-      </article>
-      <article class="reveal">
-        <p class="mono accent" data-t="pr2k"></p>
-        <h3 class="display" data-t="pr2h"></h3>
-        <p data-t="pr2p"></p>
-      </article>
-      <article class="reveal">
-        <p class="mono accent" data-t="pr3k"></p>
-        <h3 class="display" data-t="pr3h"></h3>
-        <p data-t="pr3p"></p>
-      </article>
+  <!-- ============ 2. pains ============ -->
+  <section class="pains sec" id="pains">
+    <div class="sec-head">
+      <p class="tag">01</p>
+      <h2 class="display split">Знайомо?</h2>
     </div>
-    <p class="note mono reveal" data-t="prNote"></p>
+    <div class="pain-grid">
+      <article class="pain reveal"><span class="pain-n display">01</span><p>Клієнти приходять тільки по сарафану, а в «мертвий сезон» розклад порожніє.</p></article>
+      <article class="pain reveal"><span class="pain-n display">02</span><p>Instagram є, відео з тренувань є, а в директ пишуть друзі, а не клієнти.</p></article>
+      <article class="pain reveal"><span class="pain-n display">03</span><p>Натискав «Просувати» в Instagram: гроші пішли, заявок нуль.</p></article>
+      <article class="pain reveal"><span class="pain-n display">04</span><p>Немає часу знімати, монтувати й щось вигадувати, особливо після 8 тренувань на день.</p></article>
+    </div>
+    <p class="pain-out display reveal">Справа не в тому, що ти поганий тренер. Просто сторінка і реклама <span class="hl">не налаштовані на заявки.</span></p>
   </section>
 
-  <!-- ============ 02 work (horizontal) ============ -->
-  <section class="work blue" id="work" data-hud="02|hudWork">
-    <div class="work-pin">
-      <div class="work-bg display" aria-hidden="true">Reels · Reels · Reels</div>
-      <div class="work-head">
-        <p class="label mono" data-t="wkLabel"></p>
-        <h2 class="display split" data-t="wkTitle"></h2>
-        <p class="work-sub" data-t="wkSub"></p>
-      </div>
-      <div class="work-track" id="workTrack">
-        <article class="reel">
-          <figure class="phone" data-cursor="sound"><video data-src="media/c-v9.mp4" poster="media/s-v9a.jpg" muted loop playsinline preload="none"></video></figure>
-          <p class="mono">NFC</p><h3 class="display" data-t="r1"></h3>
-        </article>
-        <article class="reel">
-          <figure class="phone" data-cursor="sound"><video data-src="media/c-v11.mp4" poster="media/s-v11a.jpg" muted loop playsinline preload="none"></video></figure>
-          <p class="mono">NFC</p><h3 class="display" data-t="r2"></h3>
-        </article>
-        <article class="reel">
-          <figure class="phone" data-cursor="sound"><video data-src="media/c-v12.mp4" poster="media/s-v12.jpg" muted loop playsinline preload="none"></video></figure>
-          <p class="mono">NFC</p><h3 class="display" data-t="r3"></h3>
-        </article>
-        <article class="reel">
-          <figure class="phone" data-cursor="sound"><video data-src="media/c-v10.mp4" poster="media/s-v10.jpg" muted loop playsinline preload="none"></video></figure>
-          <p class="mono">NFC</p><h3 class="display" data-t="r4"></h3>
-        </article>
-        <article class="reel">
-          <figure class="phone" data-cursor="sound"><video data-src="media/c-v14.mp4" poster="media/s-v14.jpg" muted loop playsinline preload="none"></video></figure>
-          <p class="mono" data-t="tagBots"></p><h3 class="display" data-t="r5"></h3>
-        </article>
-        <article class="reel">
-          <figure class="phone" data-cursor="sound"><video data-src="media/c-v15.mp4" poster="media/s-v15.jpg" muted loop playsinline preload="none"></video></figure>
-          <p class="mono" data-t="tagBots"></p><h3 class="display" data-t="r6"></h3>
-        </article>
-        <article class="reel">
-          <figure class="phone"><img src="media/s-v13.jpg" alt="" loading="lazy"></figure>
-          <p class="mono">Content</p><h3 class="display" data-t="r7"></h3>
-        </article>
-        <article class="reel reel-end">
-          <p class="display" data-t="wkEnd"></p>
-          <p class="mono" data-t="wkFormat"></p>
-        </article>
-      </div>
+  <!-- ============ 3. what we do ============ -->
+  <section class="what sec" id="what">
+    <div class="rails rails-2" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="sec-head">
+      <p class="tag">02</p>
+      <h2 class="display split">Реклама + сторінка = заявки</h2>
+      <p class="sec-sub reveal">Одна система: сторінка переконує, реклама приводить, заявка падає тобі в директ.</p>
     </div>
-  </section>
-
-  <!-- ============ how content works ============ -->
-  <section class="howto sec" data-hud="02|hudHowto">
-    <div class="howto-grid">
-      <div>
-        <p class="label mono reveal" data-t="hwLabel"></p>
-        <h2 class="display split" data-t="hwTitle"></h2>
-        <ol class="howto-steps">
-          <li class="reveal"><span class="display">01</span><p data-t="hw1"></p></li>
-          <li class="reveal"><span class="display">02</span><p data-t="hw2"></p></li>
-          <li class="reveal"><span class="display">03</span><p data-t="hw3"></p></li>
-          <li class="reveal"><span class="display">04</span><p data-t="hw4"></p></li>
-        </ol>
-      </div>
-      <aside class="callout reveal">
-        <p class="mono accent" data-t="hwCalloutK"></p>
-        <h3 class="display" data-t="hwCalloutH"></h3>
-        <p data-t="hwCalloutP"></p>
-        <p class="muted" data-t="hwCalloutWhat"></p>
-      </aside>
-    </div>
-  </section>
-
-  <!-- ============ cases ============ -->
-  <section class="cases sec paper" data-hud="02|hudCases">
-    <p class="label mono reveal" data-t="csLabel"></p>
-    <article class="case">
-      <figure class="phone reveal" data-cursor="sound"><video data-src="media/c-v9.mp4" poster="media/s-v9a.jpg" muted loop playsinline preload="none"></video></figure>
-      <div class="case-body">
-        <p class="mono accent reveal" data-t="c1k"></p>
-        <h3 class="display split" data-t="c1h"></h3>
-        <dl class="rows">
-          <div class="reveal"><dt class="mono" data-t="lblPain"></dt><dd data-t="c1pain"></dd></div>
-          <div class="reveal"><dt class="mono" data-t="lblFix"></dt><dd data-t="c1fix"></dd></div>
-          <div class="reveal"><dt class="mono" data-t="lblCta"></dt><dd data-t="c1cta"></dd></div>
-        </dl>
-        <p class="mono muted reveal" data-t="c1meta"></p>
-      </div>
-    </article>
-    <article class="case flip">
-      <figure class="phone reveal" data-cursor="sound"><video data-src="media/c-v12.mp4" poster="media/s-v12.jpg" muted loop playsinline preload="none"></video></figure>
-      <div class="case-body">
-        <p class="mono accent reveal" data-t="c2k"></p>
-        <h3 class="display split" data-t="c2h"></h3>
-        <ol class="flags reveal">
-          <li data-t="f1"></li><li data-t="f2"></li><li data-t="f3"></li><li data-t="f4"></li>
-        </ol>
-        <dl class="rows">
-          <div class="reveal"><dt class="mono" data-t="lblFinal"></dt><dd data-t="c2fin"></dd></div>
-        </dl>
-        <p class="mono muted reveal" data-t="c2meta"></p>
-      </div>
-    </article>
-  </section>
-
-  <!-- ============ 03 meta ============ -->
-  <section class="meta sec dark" id="services" data-hud="03|hudMeta">
-    <p class="label mono reveal" data-t="mtLabel"></p>
-    <h2 class="display split" data-t="mtTitle"></h2>
-    <div class="cards6">
-      <article class="reveal"><span class="mono">01</span><h3 class="display" data-t="mt1h"></h3><p data-t="mt1p"></p></article>
-      <article class="reveal"><span class="mono">02</span><h3 class="display" data-t="mt2h"></h3><p data-t="mt2p"></p></article>
-      <article class="reveal"><span class="mono">03</span><h3 class="display" data-t="mt3h"></h3><p data-t="mt3p"></p></article>
-      <article class="reveal"><span class="mono">04</span><h3 class="display" data-t="mt4h"></h3><p data-t="mt4p"></p></article>
-      <article class="reveal"><span class="mono">05</span><h3 class="display" data-t="mt5h"></h3><p data-t="mt5p"></p></article>
-      <article class="reveal"><span class="mono">06</span><h3 class="display" data-t="mt6h"></h3><p data-t="mt6p"></p></article>
-    </div>
-    <p class="note mono reveal" data-t="mtNote"></p>
-  </section>
-
-  <!-- ============ 04 nfc ============ -->
-  <section class="nfc sec navy" data-hud="04|hudNfc">
-    <div class="nfc-bg display" aria-hidden="true">
-      <div class="nfc-line" data-dir="-1"><span data-t="nfcWord"></span></div>
-      <div class="nfc-line" data-dir="1"><span data-t="nfcWord"></span></div>
-      <div class="nfc-line" data-dir="-1"><span data-t="nfcWord"></span></div>
-    </div>
-    <div class="nfc-top">
-      <div>
-        <p class="label mono reveal" data-t="nfLabel"></p>
-        <h2 class="display split" data-t="nfTitle"></h2>
-        <ol class="nfc-steps">
-          <li class="reveal" data-t="nf1"></li><li class="reveal" data-t="nf2"></li><li class="reveal" data-t="nf3"></li>
-        </ol>
-        <div class="stat reveal">
-          <p class="display">+5–9%</p>
-          <div><p data-t="nfStat"></p><p class="mono" data-t="nfSrc"></p></div>
-        </div>
-      </div>
-      <div class="nfc-phones">
-        <figure class="phone reveal"><img src="media/s-v7.jpg" alt="" loading="lazy"></figure>
-        <figure class="phone reveal" data-cursor="sound"><video data-src="media/c-v10.mp4" poster="media/s-v10.jpg" muted loop playsinline preload="none"></video></figure>
-        <figure class="phone reveal"><img src="media/s-v8.jpg" alt="" loading="lazy"></figure>
-      </div>
-    </div>
-    <h3 class="fit-title display split" data-t="nfFitTitle"></h3>
-    <div class="fit">
-      <div class="fit-yes reveal">
-        <p class="mono" data-t="nfYesK"></p>
-        <p class="fit-lead" data-t="nfYesLead"></p>
-        <ul data-t="nfYesList"></ul>
-      </div>
-      <div class="fit-no reveal">
-        <p class="mono" data-t="nfNoK"></p>
-        <p class="fit-lead" data-t="nfNoLead"></p>
-        <ul data-t="nfNoList"></ul>
-      </div>
-    </div>
-    <p class="why reveal" data-t="nfWhy"></p>
-  </section>
-
-  <!-- ============ 05 sites ============ -->
-  <section class="sites sec" data-hud="05|hudSites">
-    <p class="label mono reveal" data-t="stLabel"></p>
-    <h2 class="display split" data-t="stTitle"></h2>
-    <div class="two-col">
-      <p class="reveal" data-t="stP1"></p>
-      <p class="reveal muted" data-t="stP2"></p>
-    </div>
-    <div class="browsers">
-      <figure class="browser reveal"><div class="chrome"><i></i><i></i><i></i><span class="mono">kyivolymp.agro</span></div><img src="media/site-agro.jpg" alt="Kyiv Olymp Agro" loading="lazy"><figcaption class="mono">Kyiv Olymp Agro</figcaption></figure>
-      <figure class="browser reveal"><div class="chrome"><i></i><i></i><i></i><span class="mono">shawarma-odessa</span></div><img src="media/site-odessa.jpg" alt="Shawarma from Odessa" loading="lazy"><figcaption class="mono">Shawarma from Odessa</figcaption></figure>
-      <figure class="browser reveal"><div class="chrome"><i></i><i></i><i></i><span class="mono">arden</span></div><img src="media/site-arden.jpg" alt="ARDEN" loading="lazy"><figcaption class="mono">ARDEN</figcaption></figure>
-    </div>
-  </section>
-
-  <!-- ============ 06 bots ============ -->
-  <section class="bots sec dark" data-hud="06|hudBots">
-    <div class="clock display" aria-hidden="true">23<span class="colon">:</span>47</div>
-    <div class="bots-grid">
-      <div>
-        <p class="label mono reveal" data-t="btLabel"></p>
-        <h2 class="display split" data-t="btTitle"></h2>
-        <p class="reveal" data-t="btP1"></p>
-        <p class="reveal muted" data-t="btP2"></p>
-        <blockquote class="display reveal" data-t="btQuote"></blockquote>
-      </div>
-      <figure class="phone reveal" data-cursor="sound"><video data-src="media/c-v15.mp4" poster="media/s-v15.jpg" muted loop playsinline preload="none"></video></figure>
-    </div>
-  </section>
-
-  <!-- ============ needs ============ -->
-  <section class="needs sec blue" data-hud="07|hudNeeds">
-    <h2 class="display split" data-t="ndTitle"></h2>
-    <div class="cards6">
-      <article class="reveal"><span class="mono">01</span><h3 class="display" data-t="nd1h"></h3><p data-t="nd1p"></p></article>
-      <article class="reveal"><span class="mono">02</span><h3 class="display" data-t="nd2h"></h3><p data-t="nd2p"></p></article>
-      <article class="reveal"><span class="mono">03</span><h3 class="display" data-t="nd3h"></h3><p data-t="nd3p"></p></article>
-      <article class="reveal"><span class="mono">04</span><h3 class="display" data-t="nd4h"></h3><p data-t="nd4p"></p></article>
-      <article class="reveal"><span class="mono">05</span><h3 class="display" data-t="nd5h"></h3><p data-t="nd5p"></p></article>
-      <article class="reveal ink"><span class="mono">!</span><h3 class="display" data-t="nd6h"></h3><p data-t="nd6p"></p></article>
-    </div>
-  </section>
-
-  <!-- ============ process ============ -->
-  <section class="process sec" id="process" data-hud="08|hudProcess">
-    <h2 class="display split" data-t="psTitle"></h2>
-    <div class="ps-line" aria-hidden="true"><i id="psLine"></i></div>
-    <ol class="ps-steps">
-      <li class="reveal"><span class="display">01</span><h3 class="display" data-t="ps1h"></h3><p data-t="ps1p"></p></li>
-      <li class="reveal"><span class="display">02</span><h3 class="display" data-t="ps2h"></h3><p data-t="ps2p"></p></li>
-      <li class="reveal"><span class="display">03</span><h3 class="display" data-t="ps3h"></h3><p data-t="ps3p"></p></li>
-      <li class="reveal"><span class="display">04</span><h3 class="display" data-t="ps4h"></h3><p data-t="ps4p"></p></li>
+    <ol class="system">
+      <li class="reveal">
+        <span class="sys-n display">01</span>
+        <div><h3 class="display">Сторінка, яка продає</h3><p>Оформлюємо профіль: шапка, хайлайти, закріплені пости. Людина за 5 секунд розуміє, хто ти, кого тренуєш і як записатися.</p></div>
+      </li>
+      <li class="reveal">
+        <span class="sys-n display">02</span>
+        <div><h3 class="display">Контент</h3><p>Плануємо рилси й сторіз на місяць: сценарії, хуки, підписи. Ти знімаєш тренування — ми монтуємо й публікуємо.</p></div>
+      </li>
+      <li class="reveal">
+        <span class="sys-n display">03</span>
+        <div><h3 class="display">Реклама в Meta</h3><p>Запускаємо рекламу на людей поруч із твоїм залом: вік, інтереси, гео. Оффер — пробне тренування. Заявки йдуть у директ або в лід-форму.</p></div>
+      </li>
+      <li class="reveal">
+        <span class="sys-n display">04</span>
+        <div><h3 class="display">Цифри щотижня</h3><p>Дивимось, скільки заявок прийшло і почім. Слабке вимикаємо, сильне масштабуємо.</p></div>
+      </li>
     </ol>
   </section>
 
-  <!-- ============ contact ============ -->
-  <section class="contact sec dark" id="contact" data-hud="09|hudContact">
-    <p class="label mono reveal" data-t="ctKicker"></p>
-    <h2 class="display split" data-t="ctTitle"></h2>
-    <div class="ct-buttons">
-      <a class="btn btn-fill magnetic" href="https://t.me/Pa9krat" target="_blank" rel="noopener"><span>Telegram @Pa9krat</span><b>→</b></a>
-      <a class="btn btn-line magnetic" href="tel:+380962412274"><span>+380 96 241 22 74</span><b>→</b></a>
+  <!-- ============ 4. how ============ -->
+  <section class="how sec" id="how">
+    <div class="sec-head">
+      <p class="tag">03</p>
+      <h2 class="display split">Як проходить робота</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-line" aria-hidden="true"><i id="tlLine"></i></div>
+      <article class="tl reveal"><span class="tl-when mono">День 1</span><h3 class="display">Безкоштовний розбір</h3><p>Дивимось твій Instagram і кажемо, що заважає людям записатися.</p></article>
+      <article class="tl reveal"><span class="tl-when mono">Тиждень 1</span><h3 class="display">Підготовка</h3><p>Оформлюємо профіль, формулюємо оффер, складаємо план контенту.</p></article>
+      <article class="tl reveal"><span class="tl-when mono">Тиждень 2</span><h3 class="display">Запуск</h3><p>Перші ролики виходять, реклама стартує на твою аудиторію.</p></article>
+      <article class="tl reveal"><span class="tl-when mono">Далі щотижня</span><h3 class="display">Ритм</h3><p>Ти знімаєш — ми публікуємо, ведемо рекламу і надсилаємо звіт по заявках.</p></article>
+    </div>
+  </section>
+
+  <!-- ============ 5. needs ============ -->
+  <section class="needs sec">
+    <div class="needs-grid">
+      <div class="sec-head">
+        <p class="tag">04</p>
+        <h2 class="display split">Що потрібно від тебе</h2>
+        <p class="sec-sub reveal">Зйомку ми не робимо: ти в залі щодня, тобі простіше зняти тренування на телефон, ніж везти туди оператора.</p>
+      </div>
+      <ul class="checks">
+        <li class="reveal"><i aria-hidden="true">✓</i><div><b>Зйомка раз на тиждень</b><p>Знімаєш тренування на телефон за нашим списком кадрів.</p></div></li>
+        <li class="reveal"><i aria-hidden="true">✓</i><div><b>Доступи</b><p>До Instagram і рекламного кабінету Meta.</p></div></li>
+        <li class="reveal"><i aria-hidden="true">✓</i><div><b>Рекламний бюджет</b><p>Ти визначаєш його сам і платиш напряму в Meta.</p></div></li>
+        <li class="reveal"><i aria-hidden="true">✓</i><div><b>Швидкі відповіді</b><p>Реклама приводить людей у директ — записуєш їх ти.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ founder ============ -->
+  <section class="founder sec">
+    <figure class="founder-photo reveal">
+      <img src="media/avatar.jpg" alt="Назар Панкратов" loading="lazy" onerror="this.remove()">
+      <span class="founder-mono display" aria-hidden="true">Н</span>
+      <figcaption class="sticker">Назар Панкратов</figcaption>
+    </figure>
+    <div class="founder-copy">
+      <p class="tag">Хто веде твою рекламу</p>
+      <h2 class="display split">Ти пишеш напряму — без менеджерів</h2>
+      <p class="reveal">Кожен проєкт веде одна людина: від розбору профілю до щотижневого звіту по заявках. Знаю, як рахувати рекламу, і розмовляю мовою тренера, а не маркетингових термінів.</p>
+      <a class="btn btn-ghost reveal" href="https://t.me/Pa9krat" target="_blank" rel="noopener">Написати в Telegram <b>→</b></a>
+    </div>
+  </section>
+
+  <!-- ============ 6. fit ============ -->
+  <section class="fit sec">
+    <div class="sec-head">
+      <p class="tag">05</p>
+      <h2 class="display split">Кому підходить</h2>
+    </div>
+    <div class="sport-grid">
+      <article class="sport reveal"><h3 class="display">Футбол</h3><p>Індивідуальні тренування для дітей і дорослих</p></article>
+      <article class="sport reveal"><h3 class="display">Баскетбол</h3><p>Техніка, кидок, підготовка до команди</p></article>
+      <article class="sport reveal"><h3 class="display">Зал</h3><p>Персональні тренування, схуднення, набір маси</p></article>
+      <article class="sport reveal"><h3 class="display">HYROX</h3><p>Підготовка до стартів і функціональна витривалість</p></article>
+      <article class="sport reveal"><h3 class="display">Бокс</h3><p>Єдиноборства для новачків і просунутих</p></article>
+      <article class="sport reveal"><h3 class="display">Біг</h3><p>Підготовка до забігів і техніка бігу</p></article>
+    </div>
+    <div class="not-fit reveal">
+      <p class="mono">Кому не підійде</p>
+      <ul>
+        <li>Якщо в розкладі немає вільних місць — тоді реклама не потрібна.</li>
+        <li>Якщо немає можливості знімати хоча б раз на тиждень.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 7. formats ============ -->
+  <section class="formats sec" id="formats">
+    <div class="sec-head">
+      <p class="tag">06</p>
+      <h2 class="display split">Формати роботи</h2>
+      <p class="sec-sub reveal">Ціну рахуємо після розбору: вона залежить від міста, виду спорту і твоїх цілей.</p>
+    </div>
+    <div class="format-grid">
+      <article class="format reveal">
+        <p class="mono">Формат 1</p>
+        <h3 class="display">Реклама</h3>
+        <ul><li>Налаштування кабінету Meta</li><li>Оффер і тексти оголошень</li><li>Запуск на твою аудиторію</li><li>Щотижневий звіт по заявках</li></ul>
+      </article>
+      <article class="format format-main reveal">
+        <p class="mono">Формат 2 · рекомендуємо</p>
+        <h3 class="display">Реклама + сторінка</h3>
+        <ul><li>Все з формату «Реклама»</li><li>Оформлення профілю</li><li>План контенту на місяць</li><li>Монтаж і публікація рилсів та сторіз</li></ul>
+      </article>
+      <article class="format reveal">
+        <p class="mono">Додатково</p>
+        <h3 class="display">Підсилювачі</h3>
+        <ul><li>Сайт-візитка під рекламу</li><li>Telegram-бот для запису</li><li>NFC-картки для відгуків — якщо є свій зал чи студія</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 8. faq ============ -->
+  <section class="faq sec" id="faq">
+    <div class="faq-grid">
+      <div class="sec-head">
+        <p class="tag">07</p>
+        <h2 class="display split">Питання</h2>
+      </div>
+      <div class="faq-list">
+        <details class="reveal"><summary>Скільки коштує реклама?<i aria-hidden="true">+</i></summary><p>Рекламний бюджет ти визначаєш сам і платиш напряму в Meta. Вартість нашої роботи рахуємо після безкоштовного розбору.</p></details>
+        <details class="reveal"><summary>Коли будуть перші заявки?<i aria-hidden="true">+</i></summary><p>Перші дані видно в перші дні після запуску. Висновки робимо через 2–3 тижні, коли накопичиться статистика.</p></details>
+        <details class="reveal"><summary>Мені обов’язково знімати?<i aria-hidden="true">+</i></summary><p>Так, раз на тиждень. Ми даємо список кадрів, щоб це займало 15–20 хвилин на тренуванні, а не цілий день.</p></details>
+        <details class="reveal"><summary>Я треную в маленькому місті. Це спрацює?<i aria-hidden="true">+</i></summary><p>Так: рекламу показуємо людям у радіусі кількох кілометрів від твого залу чи поля, а не по всій Україні.</p></details>
+        <details class="reveal"><summary>Чим це краще за кнопку «Просувати»?<i aria-hidden="true">+</i></summary><p>«Просувати» в Instagram працює на охоплення й лайки. У рекламному кабінеті ми ставимо ціль «повідомлення» чи «заявки» і самі налаштовуємо аудиторію.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 9. cta ============ -->
+  <section class="cta sec" id="contact">
+    <p class="mono">Pizno агенція</p>
+    <h2 class="display split">Безкоштовно розберемо твій Instagram</h2>
+    <p class="cta-sub reveal">Напиши в Telegram: подивимось твій профіль і скажемо, що заважає людям записатися і що виправити першим.</p>
+    <div class="cta-buttons reveal">
+      <a class="btn btn-dark magnetic" href="https://t.me/Pa9krat" target="_blank" rel="noopener">Telegram @Pa9krat <b>→</b></a>
+      <a class="btn btn-line" href="tel:+380962412274">+380 96 241 22 74</a>
     </div>
     <footer class="footer mono">
-      <span>© 2026 pizno · Назар Панкратов</span>
-      <span data-t="footer"></span>
+      <span>© 2026 Pizno агенція</span>
+      <span>Реклама в Meta для персональних тренерів</span>
     </footer>
   </section>
 </main>
