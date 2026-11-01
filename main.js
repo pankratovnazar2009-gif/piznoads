@@ -161,5 +161,81 @@ if (hasGsap && !reduce) {
   const line = $("#tlLine"); if (line) line.style.transform = "none";
 }
 
+/* ---------- lead form → /api/lead → Telegram bot ----------
+   If the API is unreachable (local preview, a host without the function,
+   or the bot is not configured yet), the form falls back to a prefilled
+   Telegram message, so no lead is lost. */
+const TG_USERNAME = "Pa9krat";
+const dlg = $("#leadDialog"), form = $("#leadForm"), done = $("#leadDone");
+const errBox = $("#leadError"), submitBtn = $("#leadSubmit"), fallback = $("#leadFallback");
+
+function openLead() {
+  form.hidden = false; done.hidden = true; errBox.textContent = "";
+  if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+  if (lenis) lenis.stop();
+  setTimeout(() => $("#leadName").focus(), 60);
+}
+function closeLead() {
+  if (typeof dlg.close === "function") dlg.close(); else dlg.removeAttribute("open");
+}
+dlg.addEventListener("close", () => { if (lenis) lenis.start(); });
+dlg.addEventListener("click", e => { if (e.target === dlg) closeLead(); });
+$$("[data-open-lead]").forEach(b => b.addEventListener("click", openLead));
+$$("[data-close-lead]").forEach(b => b.addEventListener("click", closeLead));
+
+function leadText(d) {
+  return [
+    "Привіт! Хочу безкоштовний розбір Instagram.",
+    `Ім’я: ${d.name}`,
+    `Instagram: ${d.instagram}`,
+    `Спорт: ${d.sport}`,
+    d.city && `Місто: ${d.city}`,
+    `Зв’язок: ${d.contact}`,
+    d.goal && `Мета: ${d.goal}`,
+  ].filter(Boolean).join("\n");
+}
+
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  const d = Object.fromEntries(new FormData(form).entries());
+  Object.keys(d).forEach(k => d[k] = String(d[k]).trim());
+
+  const required = [["name", "#leadName"], ["instagram", "#leadInsta"], ["contact", "#leadContact"]];
+  let firstBad = null;
+  required.forEach(([k, sel]) => {
+    const el = $(sel), bad = !d[k];
+    el.setAttribute("aria-invalid", bad);
+    if (bad && !firstBad) firstBad = el;
+  });
+  if (firstBad) { errBox.textContent = "Заповни ім’я, Instagram і куди тобі написати."; firstBad.focus(); return; }
+  errBox.textContent = "";
+
+  submitBtn.disabled = true;
+  submitBtn.firstChild.textContent = "Надсилаємо… ";
+  let sent = false;
+  try {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 8000);
+    const r = await fetch("/api/lead", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(d), signal: ctrl.signal });
+    clearTimeout(timer);
+    sent = r.ok && (await r.json().catch(() => ({}))).ok === true;
+  } catch (err) { sent = false; }
+  submitBtn.disabled = false;
+  submitBtn.firstChild.textContent = "Надіслати анкету ";
+
+  form.hidden = true; done.hidden = false;
+  if (sent) {
+    $("#leadDoneTitle").textContent = "Анкету отримано";
+    $("#leadDoneText").textContent = "Подивимось твій профіль і напишемо в Telegram або за номером, який ти залишив.";
+    fallback.hidden = true;
+    form.reset();
+  } else {
+    $("#leadDoneTitle").textContent = "Останній крок";
+    $("#leadDoneText").textContent = "Натисни кнопку нижче: відкриється Telegram з уже заповненою анкетою. Залишиться тільки надіслати.";
+    fallback.href = `https://t.me/${TG_USERNAME}?text=${encodeURIComponent(leadText(d))}`;
+    fallback.hidden = false;
+  }
+});
+
 /* ---------- start ---------- */
 runLoader().then(leaveLoader);

@@ -56,7 +56,7 @@
       <h1 class="display split">Заповнимо твій розклад клієнтами з <span class="hl">Instagram</span></h1>
       <p class="hero-sub reveal">Налаштовуємо рекламу і ведемо твою сторінку так, щоб люди писали в директ і записувалися на пробне тренування. Ти тренуєш — ми приводимо клієнтів.</p>
       <div class="hero-ctas reveal">
-        <a class="btn btn-accent magnetic" href="https://t.me/Pa9krat" target="_blank" rel="noopener">Безкоштовний розбір твого Instagram <b>→</b></a>
+        <button type="button" class="btn btn-accent magnetic" data-open-lead>Безкоштовний розбір твого Instagram <b>→</b></button>
         <a class="btn btn-ghost" href="#what">Як це працює</a>
       </div>
       <p class="sports mono reveal">Футбол · баскетбол · зал · HYROX · бокс · функціональний тренінг</p>
@@ -262,9 +262,10 @@
   <section class="cta sec" id="contact">
     <p class="mono">Pizno агенція</p>
     <h2 class="display split">Безкоштовно розберемо твій Instagram</h2>
-    <p class="cta-sub reveal">Напиши в Telegram: подивимось твій профіль і скажемо, що заважає людям записатися і що виправити першим.</p>
+    <p class="cta-sub reveal">Заповни коротку анкету або напиши в Telegram: подивимось твій профіль і скажемо, що заважає людям записатися і що виправити першим.</p>
     <div class="cta-buttons reveal">
-      <a class="btn btn-dark magnetic" href="https://t.me/Pa9krat" target="_blank" rel="noopener">Telegram @Pa9krat <b>→</b></a>
+      <button type="button" class="btn btn-dark magnetic" data-open-lead>Заповнити анкету на розбір <b>→</b></button>
+      <a class="btn btn-line" href="https://t.me/Pa9krat" target="_blank" rel="noopener">Telegram @Pa9krat</a>
       <a class="btn btn-line" href="tel:+380962412274">+380 96 241 22 74</a>
     </div>
     <footer class="footer mono">
@@ -273,6 +274,38 @@
     </footer>
   </section>
 </main>
+
+<!-- ============ lead form: заявки йдуть у Telegram-бот через /api/lead ============ -->
+<dialog class="lead" id="leadDialog" aria-labelledby="leadTitle">
+  <button type="button" class="lead-close" data-close-lead aria-label="Закрити">✕</button>
+  <form class="lead-form" id="leadForm" novalidate>
+    <p class="sticker">Безкоштовний розбір</p>
+    <h2 class="display" id="leadTitle">Анкета на розбір Instagram</h2>
+    <p class="lead-note">Займе хвилину. Подивимось профіль і напишемо тобі, що заважає людям записатися.</p>
+    <div class="lead-grid">
+      <label for="leadName">Ім’я<input id="leadName" name="name" autocomplete="given-name" required maxlength="80" placeholder="Андрій"></label>
+      <label for="leadInsta">Instagram<input id="leadInsta" name="instagram" required maxlength="80" placeholder="@твій_профіль"></label>
+      <label for="leadSport">Вид спорту
+        <select id="leadSport" name="sport">
+          <option>Футбол</option><option>Баскетбол</option><option>Зал</option><option>HYROX</option><option>Бокс</option><option>Біг</option><option>Інше</option>
+        </select>
+      </label>
+      <label for="leadCity">Місто<input id="leadCity" name="city" autocomplete="address-level2" maxlength="60" placeholder="Київ"></label>
+      <label class="wide" for="leadContact">Куди тобі написати<input id="leadContact" name="contact" required maxlength="80" placeholder="Telegram @нік або телефон"></label>
+      <label class="wide" for="leadGoal">Що хочеш покращити <span>(необов’язково)</span><textarea id="leadGoal" name="goal" rows="3" maxlength="500" placeholder="Наприклад: більше дорослих клієнтів на вечірні тренування"></textarea></label>
+      <label class="hp" for="leadWebsite" aria-hidden="true">Сайт<input id="leadWebsite" name="website" tabindex="-1" autocomplete="off"></label>
+    </div>
+    <p class="lead-error" id="leadError" role="alert"></p>
+    <button type="submit" class="btn btn-accent lead-submit" id="leadSubmit">Надіслати анкету <b>→</b></button>
+  </form>
+  <div class="lead-done" id="leadDone" hidden>
+    <p class="sticker">Готово</p>
+    <h2 class="display" id="leadDoneTitle">Анкету отримано</h2>
+    <p class="lead-note" id="leadDoneText">Подивимось твій профіль і напишемо в Telegram або за номером, який ти залишив.</p>
+    <a class="btn btn-accent" id="leadFallback" href="https://t.me/Pa9krat" target="_blank" rel="noopener" hidden>Надіслати анкету в Telegram <b>→</b></a>
+    <button type="button" class="btn btn-ghost" data-close-lead>Закрити</button>
+  </div>
+</dialog>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
